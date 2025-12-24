@@ -44,64 +44,70 @@ def RaynorScript():
             print("准备失败")
             sys.exit()
 
-        # Attack targets
-        print("准备攻击目标点...")
+        # Ready to attack targets
+        print("正在寻找初始目标点...")
+        target1 = target2 = target3 = target4 = target5 = None
         while True:
             time.sleep(1)
-            target1 = script_util.find_template_on_screen(sct, "./pics/target1.png")
+            target1 = script_util.find_template_on_screen(sct, "./pics/first_target.png")
             if target1 is not None:
-                pyautogui.hotkey('ctrl', 'z')
                 pyautogui.keyDown('shift')
                 # Attack target1
+                print("开始攻击...")
                 for i in range(10):
+                    pyautogui.hotkey('ctrl', 'z')
                     pyautogui.click(target1)
                     time.sleep(0.1)
-                time.sleep(3)
-                # Attack target2
-                target2 = script_util.find_template_on_screen(sct, "./pics/target2.png")
-                if target2 is not None:
-                    for i in range(10):
-                        pyautogui.click(target2)
-                        time.sleep(0.1)
-                    time.sleep(5)
-                else:
-                    # error
-                    print("目标点2寻找失败")
-                    sys.exit()
-                # Attack target3
-                target3 = script_util.find_template_on_screen(sct, "./pics/target3.png")
-                if target3 is not None:
-                    for i in range(10):
-                        pyautogui.click(target3)
-                        time.sleep(0.1)
-                    time.sleep(7)
-                else:
-                    # error
-                    print("目标点3寻找失败")
-                    sys.exit()
-                # Attack target4
-                target4 = script_util.find_template_on_screen(sct, "./pics/target4.png")
-                if target4 is not None:
-                    for i in range(10):
-                        pyautogui.click(target4)
-                        time.sleep(0.1)
-                    time.sleep(9)
-                else:
-                    # error
-                    print("目标点4寻找失败")
-                    sys.exit()
-                # Attack target5
-                target5 = script_util.find_template_on_screen(sct, "./pics/target5.png")
-                if target4 is not None:
-                    for i in range(10):
-                        pyautogui.click(target5)
-                        time.sleep(0.1)
-                else:
-                    # error
-                    print("目标点5寻找失败")
-                    sys.exit()
-                print("目标点进攻完毕")
+                for i in range(10):
+                    pyautogui.hotkey('ctrl', 'x')
+                    pyautogui.click(target1)
+                    time.sleep(0.1)
                 break
+        time.sleep(5)
+        target2 = (target1[0] + 21, target1[1] - 151)
+        target3 = (target1[0] + 102, target1[1] - 46)
+        target4 = (target1[0] - 113, target1[1] - 37)
+        target5 = (target1[0] - 112, target1[1] - 159)
+        # Attack other targets
+        for i in range(10):
+            pyautogui.hotkey('ctrl', 'z')
+            pyautogui.click(target2)
+            time.sleep(0.1)
+        for i in range(10):
+            pyautogui.hotkey('ctrl', 'x')
+            pyautogui.click(target2)
+            time.sleep(0.1)
+        time.sleep(7)
+
+        for i in range(10):
+            pyautogui.hotkey('ctrl', 'z')
+            pyautogui.click(target3)
+            time.sleep(0.1)
+        for i in range(10):
+            pyautogui.hotkey('ctrl', 'x')
+            pyautogui.click(target3)
+            time.sleep(0.1)
+        time.sleep(9)
+
+        for i in range(10):
+            pyautogui.hotkey('ctrl', 'z')
+            pyautogui.click(target4)
+            time.sleep(0.1)
+        for i in range(10):
+            pyautogui.hotkey('ctrl', 'x')
+            pyautogui.click(target4)
+            time.sleep(0.1)
+        time.sleep(11)
+
+        for i in range(10):
+            pyautogui.hotkey('ctrl', 'z')
+            pyautogui.click(target5)
+            time.sleep(0.1)
+        for i in range(10):
+            pyautogui.hotkey('ctrl', 'x')
+            pyautogui.click(target5)
+            time.sleep(0.1)
+        pyautogui.keyUp('shift')
 
         # Exit level
         print("等待退出关卡...")
