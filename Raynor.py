@@ -38,7 +38,7 @@ def RaynorScript():
         print("准备中...")
         ready = script_util.find_template_on_screen(sct, "./pics/ready.png")
         if ready is not None:
-            pyautogui.moveTo(ready)
+            pyautogui.click(ready)
         else:
             # error
             print("准备失败")
