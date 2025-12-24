@@ -49,15 +49,7 @@ def OthersScript():
         while True:
             time.sleep(1)
             score = None
-            score_p = script_util.find_template_on_screen(sct, "./pics/score_p.png")
-            score_t = script_util.find_template_on_screen(sct, "./pics/score_t.png")
-            score_z = script_util.find_template_on_screen(sct, "./pics/score_z.png")
-            if score_p is not None:
-                score = score_p
-            if score_t is not None:
-                score = score_t
-            if score_z is not None:
-                score = score_z
+            score = script_util.find_template_on_screen(sct, "./pics/score.png")
             if score is not None:
                 pyautogui.click(score)
                 print("关卡退出完成")
@@ -82,3 +74,4 @@ if __name__ == "__main__":
     while True:
         print(f"当前战斗次数: {loop_num}")
         OthersScript()
+        loop_num = loop_num + 1
