@@ -120,7 +120,7 @@ def RaynorScript():
                 print("关卡退出完成")
                 break
         
-        # back to menu
+        # Back to menu
         print("准备返回主菜单")
         while True:
             time.sleep(1)
@@ -130,6 +130,11 @@ def RaynorScript():
                 time.sleep(1)
                 print("主菜单返回成功，当前战斗轮次结束")
                 break
+        
+        # press yes if 15 level
+        time.sleep(1)
+        pyautogui.click((1270, 910))
+
 
 
 if __name__ == "__main__":
