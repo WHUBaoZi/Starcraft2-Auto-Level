@@ -46,8 +46,15 @@ def OthersScript():
 
         # Exit level
         print("等待退出关卡...")
+        max_wait_num = 100
+        wait_num = 0
+        bError = False
         while True:
             time.sleep(1)
+            wait_num = wait_num + 1
+            if wait_num > max_wait_num:
+                bError = True
+                break
             score = None
             score = script_util.find_template_on_screen(sct, "./pics/score.png")
             if score is not None:
@@ -58,6 +65,8 @@ def OthersScript():
         # Back to menu
         print("准备返回主菜单")
         while True:
+            if (bError):
+                break
             time.sleep(1)
             leave = script_util.find_template_on_screen(sct, "./pics/leave.png")
             if leave is not None:
