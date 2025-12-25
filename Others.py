@@ -43,6 +43,13 @@ def OthersScript():
             # error
             print("准备失败")
             sys.exit()
+            
+        # Wait for begin
+        while True:
+            time.sleep(1)
+            custom = script_util.find_template_on_screen(sct, "./pics/custom.png")
+            if custom is None:
+                break
 
         # Exit level
         print("等待退出关卡...")
