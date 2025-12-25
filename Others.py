@@ -43,7 +43,7 @@ def OthersScript():
             # error
             print("准备失败")
             sys.exit()
-            
+
         # Wait for begin
         while True:
             time.sleep(1)
@@ -53,7 +53,7 @@ def OthersScript():
 
         # Exit level
         print("等待退出关卡...")
-        max_wait_num = 100
+        max_wait_num = 200
         wait_num = 0
         bError = False
         while True:
