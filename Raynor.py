@@ -112,7 +112,7 @@ def RaynorScript():
         
         # Exit level
         print("等待退出关卡...")
-        max_wait_num = 100
+        max_wait_num = 200
         wait_num = 0
         bError = False
         while True:
