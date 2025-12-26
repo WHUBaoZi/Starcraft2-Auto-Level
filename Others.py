@@ -13,7 +13,6 @@ def OthersScript():
             time.sleep(1)
             ready = script_util.find_template_on_screen(sct, "./pics/ready.png")
             if ready is not None:
-                time.sleep(5)
                 custom = (ready[0], ready[1] - 170)
                 pyautogui.click(custom)
                 time.sleep(1)
